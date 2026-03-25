@@ -1,8 +1,6 @@
-console.log("hello world!!!");
 
-function getComputerChoice () {
+function getComputerChoice() {
     let x = Math.floor(Math.random() * 3) +1;
-    console.log(x);
     return x;
 }
 
@@ -18,3 +16,16 @@ if (compChoice === 1) {
 } else {
     console.log("Scissors");
 }
+
+
+function getHumanChoice() {
+    let humanChoice;
+    humanChoice = window.prompt("Rock, Paper, or Scissors?");
+    console.log(humanChoice)
+    return humanChoice
+
+}
+
+getHumanChoice();
+
+
