@@ -18,9 +18,9 @@ function getHumanChoice() {
 }
 
 // Game round logic
+
 let playerScore = 0;
 let computerScore = 0;
-
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
@@ -33,25 +33,51 @@ function playRound(humanChoice, computerChoice) {
         console.log("its a tie");
     } else if (humanChoice === "rock")
         { if (computerChoice === "paper") {
+            computerScore++;
             console.log("player lost, paper beats rock")
         } else {
+            playerScore++;
             console.log("Player won! Rock beats Scissors")
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "scissors"){
+            computerScore++;
             console.log("Player lost. Scissors beats Paper.")
         } else if (computerChoice === "rock") {
+            playerScore++;
             console.log("Player wins!, Paper beats Rock!")
         }
     } else if (humanChoice === "scissors") {
         if (computerChoice === "rock"){
+            computerScore++;
             console.log("Player lost. rock beats scissors.")
         } else if (computerChoice === "paper") {
+            playerScore++;
             console.log("Player wins!, scissors beats paper!")
         }
     }
-
+console.log("player score: " + playerScore);
+console.log("Computer scrore: " + computerScore);
 
 }
 
-playRound();
+
+
+
+function playGame(){
+
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    if (playerScore > computerScore){
+        console.log("Player won!!!! Congratulations");
+    } else if (playerScore < computerScore) {
+        console.log("The computer won. Better luck next time...");
+    } else {
+        console.log("Its a tie. No one won.");
+    }
+}
+
+playGame();
